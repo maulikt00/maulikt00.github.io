@@ -15,6 +15,7 @@
       <a href="projects.html">Projects</a>
       <a href="contact.html">Contact</a>
     </nav>
+    <button id="darkModeToggle">🌙 Dark Mode</button>
   </header>
 
   <div class="container">
@@ -24,5 +25,24 @@
   <footer>
     <p>&copy; 2025 [Your Name]. All rights reserved.</p>
   </footer>
+
+  <script>
+    const toggleBtn = document.getElementById("darkModeToggle");
+    const body = document.body;
+    if (localStorage.getItem("theme") === "dark") {
+      body.classList.add("dark-mode");
+      toggleBtn.textContent = "☀️ Light Mode";
+    }
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+      if (body.classList.contains("dark-mode")) {
+        toggleBtn.textContent = "☀️ Light Mode";
+        localStorage.setItem("theme", "dark");
+      } else {
+        toggleBtn.textContent = "🌙 Dark Mode";
+        localStorage.setItem("theme", "light");
+      }
+    });
+  </script>
 </body>
 </html>
