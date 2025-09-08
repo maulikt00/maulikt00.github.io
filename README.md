@@ -1,2 +1,2 @@
-# maulikt00.hithub.io
+# maulikt00.github.io
 website
